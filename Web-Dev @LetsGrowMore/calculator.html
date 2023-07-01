@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CALCULATOR</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        body {
+            background-image: url(https://cdn.pixabay.com/photo/2021/08/07/14/36/modern-6528732_1280.png);
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        .box {
+            height: 90vh;
+            width: 90vw;
+            border: 1px solid rgba(255, 255, 255, 0.488);
+            background-color: rgb(4, 2, 0);
+            box-shadow: 20px 20px 20px black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .calculator {
+            height: 60vh;
+            width: 28vw;
+            border:1px solid white;
+            background-color: rgb(5, 5, 5);
+            box-shadow: 18px 18px 18px rgb(8, 86, 96);
+        }
+
+        .num {
+            display: inline-block;
+            height: 35px;
+            width: 87px;
+            margin: 6px;
+            margin-top: 20px;
+            border: 1px solid gold;
+            border-radius: 55px;
+            background-color: gold;
+            font-size: 30px;
+            box-shadow: inset -5px -5px 5px rgb(12, 7, 7);
+        }
+
+        .num:hover {
+            color: black;
+            background-color: crimson;
+        }
+
+        .screen {
+            border: 1px solid rgb(8, 0, 0);
+            background-color: rgb(6, 250, 242);
+            box-sizing: border-box;
+            height: 75px;
+            width: 100%;
+            margin-top: 20px;
+            font-size: 35px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <div class="calculator">
+            <input type="text"class="screen" id="scrn" placeholder="calculate here">
+            <div>
+                <button id="id1" onclick="appendToResult('*')" class="num">*</button>
+                <button id="id1" onclick="appendToResult('/')" class="num">/</button>
+                <button id="id1" onclick="clearResult('AC')" class="num">AC</button>
+                <button id="id1" onclick="appendToResult('=')" class="num">=</button>
+            </div>
+            <div>
+                <button id="id11" onclick="appendToResult('7')" class="num">7</button>
+                <button id="id2" onclick="appendToResult('8')" class="num">8</button>
+                <button id="id3" onclick="appendToResult('9')" class="num">9</button>
+                <button id="id4" onclick="appendToResult('+')" class="num">+</button>
+            </div>
+            <div>
+                <button id="id5" onclick="appendToResult('4')" class="num">4</button>
+                <button id="id6" onclick="appendToResult('5')" class="num">5</button>
+                <button id="id7" onclick="appendToResult('6')" class="num">6</button>
+                <button id="id8" onclick="appendToResult('-')" class="num">-</button>
+            </div>
+            <div>
+                <button id="id9" onclick="appendToResult('1')" class="num">1</button>
+                <button id="ida" onclick="appendToResult('2')" class="num">2</button>
+                <button id="idb" onclick="appendToResult('3')" class="num">3</button>
+                <button id="idc" onclick="appendToResult('0')" class="num">0</button>
+                <button id="idc" onclick="appendToResult('*')" class="num">*</button>
+                <button id="idc" onclick="appendToResult('%')" class="num">%</button>
+                <button id="idd" onclick="calculateResult('ENTER')" class="num">ENTER</button>
+            </div>
+        </div>
+    </div>
+    <script>
+        function appendToResult(value) {
+            document.getElementById('scrn').value += value;
+          }
+      
+          function clearResult() {
+            document.getElementById('scrn').value = '';
+          }
+      
+          function calculateResult() {
+            var result = eval(document.getElementById('scrn').value);
+            document.getElementById('scrn').value = result;
+          }
+            
+
+    </script>
+</body>
+
+</html>
